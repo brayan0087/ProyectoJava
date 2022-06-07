@@ -1,0 +1,232 @@
+/* reset css y defino variables css*/
+:root{
+--main-font:sans-serif;
+--font-size:16px;
+--main-color:#f7df1e;
+--second-color:#222;
+--main-modal-color:rgba(247,222,30,0.85);
+--second-modal-color:rgba(97, 95, 95, 0.85);
+--container-width:1200px;
+
+}
+
+html{
+    box-sizing: border-box;
+    font-family:var(--main-font);
+    font-size:var(--font-size);
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body{
+    margin:0;
+    overflow-x:hidden;
+
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* menu hamburguer*/
+.header{
+position: sticky;
+top: 0;
+padding:1rem;
+background-color:var(--second-color);
+color:var(--main-color);
+
+
+}
+
+.header.inde{
+
+    z-index:999;
+}
+
+
+.header h1{
+    margin:0;
+    text-align:center;
+    
+}
+
+.section{
+   
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    max-width: var(--container-width);
+    min-height: 100vh;
+    text-align:center; 
+    line-height:50px;
+    
+}
+
+.panel{
+position: fixed;
+z-index: 998;
+top: 0;
+bottom: 0;
+right: 0;
+left: 0;
+background-color:var(--second-modal-color);
+width:100%;
+transition: transform.6s ease;
+transform: translate(-100%,0);   /*para que salga de arriba x=0 y=-100%  abajo y=100 derecha x=100 izquierda x=-100*/
+}
+
+.panel.is-active{
+    transform: translate(0,0);
+}
+
+
+
+
+.panel-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--main-color);
+}
+
+.up-scroll{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    right: calc(4.25rem + 3vh);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--main-color);
+    transition:all  0.6s ease-out;
+    cursor: pointer;   
+}
+
+
+.up-scroll.trnspa{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.6s ease-out;
+}
+
+
+.dark-theme-btn{
+    position: fixed;
+    z-index: 999;
+    bottom: 1vh;
+    font-size: 35px;
+    left: 1vw;;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--main-color);
+    transition:all  0.6s ease-out;
+    cursor: pointer; 
+} 
+
+.dark-theme-btn:hover{
+    color: white;
+    background-color: var(--second-color);
+}
+
+.dark-mode{
+    background-color: black;
+    color:var(--main-color);
+}
+
+.menu{
+width:inherit;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+text-align: center;
+}
+
+
+.menu a{
+    padding:2rem;
+    width:inherit;
+    display: block;
+    font-size:1.5rem;
+    text-decoration: none;
+    color:var(--main-color);
+    transition: all 0.3s ease;
+}
+
+
+.menu a:hover{
+    font-weight:bold;
+    color:var(--second-color);
+    background-color:var(--main-modal-color);
+
+} 
+
+
+
+
+/*Eventos del teclado*/
+
+.stage{
+    display: flex;
+    min-height:50vh;
+    background-color: var(--second-color);
+    
+}
+
+.bol{
+    display:flex;
+    margin:auto;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    
+}
+
+.bol.hid{
+    visibility: hidden;
+}
+
+
+main{
+    margin-right:50px ;
+    margin-left:50px ;
+    text-align: center;      
+}
+
+
+form{
+   
+   margin: 0 auto ;
+   text-align: center;
+   width: 50%;
+}
+
+
